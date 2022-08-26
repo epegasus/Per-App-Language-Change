@@ -16,7 +16,7 @@ Step-1
         </service>
     
 Step-2
-    In Gradle (app), add a service
+    In Gradle (app), add following
     
       a)
         /* Must update compile SDK & target SDK to 33 for Appcompat 1.6.0-beta01 or higher. */
