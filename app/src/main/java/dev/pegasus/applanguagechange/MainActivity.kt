@@ -20,6 +20,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
+        // Using 'doOnPreDraw' & 'viewStub' for drop-down to behave normally
         binding.root.doOnPreDraw {
             initExposedDropDown()
         }
