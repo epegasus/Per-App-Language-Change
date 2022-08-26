@@ -28,9 +28,11 @@ Step-2
         implementation 'androidx.appcompat:appcompat:1.6.0-beta01'
     
 Step-3
+
     Add string.xml for your desired languages
     
 Step-4
+
     //Pass language code to following function to update app locale e.g. "en" for english
       
     val appLocale: LocaleListCompat = LocaleListCompat.forLanguageTags("en")
