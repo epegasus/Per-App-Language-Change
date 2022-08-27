@@ -1,6 +1,7 @@
 package dev.pegasus.applanguagechange
 
 import android.os.Bundle
+import android.util.Log
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import androidx.appcompat.app.AppCompatActivity
@@ -10,6 +11,8 @@ import androidx.core.view.doOnPreDraw
 import dev.pegasus.applanguagechange.databinding.ActivityMainBinding
 import dev.pegasus.applanguagechange.databinding.StubLanguageDropDownBinding
 import dev.pegasus.applanguagechange.helper.dataProvider.DPCountries
+
+const val TAG = "Magic"
 
 class MainActivity : AppCompatActivity() {
 
@@ -24,6 +27,11 @@ class MainActivity : AppCompatActivity() {
         binding.root.doOnPreDraw {
             initExposedDropDown()
         }
+
+
+        // Use the following line to get applied locale (language code)
+        val defaultLanguageCode = AppCompatDelegate.getApplicationLocales().toLanguageTags()
+        Log.d(TAG, "onCreate: $defaultLanguageCode")
     }
 
     private fun initExposedDropDown() {
