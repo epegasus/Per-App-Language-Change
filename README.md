@@ -3,6 +3,7 @@
 Change app language using following steps
 
 Step-1
+
     In Manifest, add a service
 
     <!--Must add this service for android 12 or lower && 'autoStoreLocales' means to save value in Shared Preference-->
@@ -16,6 +17,7 @@ Step-1
         </service>
     
 Step-2
+
     In Gradle (app), add following
     
       a)
@@ -29,9 +31,23 @@ Step-2
     
 Step-3
 
-    Add string.xml for your desired languages
+    In Gradle (app), add following code to prevent string.xml files from being spliting in release bundle.
+
+    bundle {
+        language {
+            // Specifies that the app bundle should not support
+            // configuration APKs for language resources. These
+            // resources are instead packaged with each base and
+            // dynamic feature APK.
+            enableSplit = false
+        }
+    }
     
 Step-4
+
+    Add string.xml for your desired languages
+    
+Step-6
 
     //Pass language code to following function to update app locale e.g. "en" for english
       
